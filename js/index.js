@@ -465,8 +465,6 @@ for (var i = 0; i < collapsibles.length; i++) {
 // Submit order upon payment completion
 function submitOrder(details) {
 
-    console.log(details);
-
     var billingName = "";
     if (details.payer.name.given_name + " " + details.payer.name.surname) {
         billingName = details.payer.name.given_name + " " + details.payer.name.surname;
