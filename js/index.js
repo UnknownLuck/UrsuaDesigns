@@ -266,7 +266,7 @@ function addToCart(button) {
     var data = {};
 
     for (var i = 0; i < classes.length; i++) {
-        if (classes[i] != "add-to-cart-button") {
+        if (classes[i] != "add-to-cart-button" && classes[i] != "sqs-block-button-element") {
             productKey = classes[i];
         }
     }
