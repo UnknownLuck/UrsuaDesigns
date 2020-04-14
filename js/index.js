@@ -465,12 +465,26 @@ for (var i = 0; i < collapsibles.length; i++) {
 // Submit order upon payment completion
 function submitOrder(details) {
 
-    var billingName = details.payer.name.given_name + " " + details.payer.name.surname;
-    var shippingName = details.purchase_units[0].shipping.name.full_name;
+    console.log(details);
 
-    var billingEmail = details.payer.email_address;
+    var billingName = "";
+    if (details.payer.name.given_name + " " + details.payer.name.surname) {
+        billingName = details.payer.name.given_name + " " + details.payer.name.surname;
+    }
+    var shippingName = "";
+    if (details.purchase_units[0].shipping.name.full_name) {
+        shippingName = details.purchase_units[0].shipping.name.full_name;
+    }
 
-    var billingPhoneNumber = details.payer.phone.phone_number.national_number;
+    var billingEmail = "";
+    if (details.payer.email_address) {
+        billingEmail = details.payer.email_address;
+    }
+
+    var billingPhoneNumber = "";
+    if (details.payer.phone) {
+        billingPhoneNumber = details.payer.phone.phone_number.national_number;
+    }
 
     var billingAddress = "";
     var shippingAddress = "";
@@ -551,11 +565,11 @@ function submitOrder(details) {
             Name: orderInfo.billing.name,
             Address: orderInfo.shipping.address,
             Email: orderInfo.billing.email,
-            Subtotal: subtotal.toFixed(2),
-            Shipping: shipping.toFixed(2),
-            Taxes: taxes.toFixed(2),
-            Total: total.toFixed(2),
-            Details: JSON.stringify(orderInfo)
+            Subtotal: parseFloat(document.getElementById("cart-subtotal").innerText.split('$')[1]).toFixed(2),
+            Shipping: parseFloat(document.getElementById("cart-shipping").innerText.split('$')[1]).toFixed(2),
+            Taxes: parseFloat(document.getElementById("cart-taxes").innerText.split('$')[1]).toFixed(2),
+            Total: parseFloat(document.getElementById("cart-total").innerText.split('$')[1]).toFixed(2),
+            Details: JSON.stringify(details)
         },
         type: "GET",
         success: function (d) { },
