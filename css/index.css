@@ -455,6 +455,11 @@ header.masthead .heading-text .heading-main {
 
 #shipping-options {
 	font-size: 12pt;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-appearance: none;
+	padding: 2px;
 }
 
 .modal-footer .btn {

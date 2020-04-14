@@ -414,7 +414,7 @@
                         </table>
                         <div class="container">
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-md-6 col-sm-12">
                                     <h6>Select Your Shipping Option</h6>
 
                                     <!-- Add Your Shipping Options Here -->
@@ -427,7 +427,7 @@
                                     </select>
                                 </div>
 
-                                <table class="col">
+                                <table class="col-md-6 col-sm-12">
                                     <tr>
                                         <td>
                                             <h5 class="table-right">Subtotal:</h5>
@@ -513,8 +513,6 @@
             onApprove: function (data, actions) {
                 return actions.order.capture().then(function (details) {
                     submitOrder(details);
-                    // Order needs to be handled, edit this function to add the functionallity you need
-                    // sumbitOrder function found in /js/ezShop/order.js
                 });
             }
         }).render('#paypal-button-container');

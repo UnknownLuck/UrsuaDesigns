@@ -205,7 +205,7 @@ function updateCartModal(updateOnlyPrices) {
         var orderData = getCart(true)[i];
 
         var itemPrice = 0;
-        var itemTaxes = 0;
+		var itemTaxes = 0;
 
         if (item.productName == "Custom Order") {
             itemPrice = item.price * item.amount;
@@ -575,6 +575,6 @@ function errData(err) {
     console.log(err);
 }
 
-$(document).ready(function () {
+/*$(document).ready(function () {
     $('#cart').modal('show');
-});
+});*/
