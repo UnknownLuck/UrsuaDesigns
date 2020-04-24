@@ -1,9 +1,6 @@
 var db = {};
 
 var products = [];
-var prices = [];
-var amounts = []
-var totalPrices = [];
 var images = [];
 
 setupNavbar();
@@ -13,52 +10,58 @@ updateCartModal(false);
 // Finds details on the page about the products and automates certain tasks
 function findProductsAndDetails() {
 
-    var productElements = document.getElementsByClassName('item-title');
-    var priceElements = document.getElementsByClassName('product-price');
+    var productElementTitles = document.getElementsByClassName('item-title');
     var cartButtonElements = document.getElementsByClassName('add-to-cart-button');
     var imageElements = document.getElementsByClassName('item-image');
 
     // Loop through and find product names
-    for (var i = 0; i < productElements.length; i++) {
-        var productIT = productElements[i].innerText;
+    for (var i = 0; i < productElementTitles.length; i++) {
+        var productIT = productElementTitles[i].innerText;
         var str = "";
         for (var j = 0; j < productIT.length; j++) {
             if (productIT[j] != " ") {
                 str += productIT[j]
             }
         }
-        products.push(str);
-    }
 
-    // Loop through and find product prices
-    for (var i = 0; i < priceElements.length; i++) {
-        //prices.push(priceElements[i].innerText);
+        var price;
+        var image;
+        var modalElement = document.getElementById(str);
+
+        if (productElementTitles[i].innerText == "Custom Order") {
+            price = "Variable";
+            // Correct price gathered at "Add to Cart" events
+        } else {
+            price = modalElement.querySelectorAll(".product-price")[0].innerText;
+        }
+
+        image = imageElements[i].attributes[1].value;
+
+        products.push([productElementTitles[i].innerText, price, image]);
     }
 
     // Loop through each add to cart button
     for (var i = 0; i < cartButtonElements.length; i++) {
         cartButtonElements[i].addEventListener('click', e => { addToCart(e.target); e.target.setAttribute('data-dismiss', 'modal') }, false);
-        cartButtonElements[i].classList.add(products[i]);
-    }
 
-    // Loop through and find product amounts
-    if (getCart(true)) {
-        // Loop through each item in the cart
-        for (var i = 0; i < Object.keys(getCart(true)).length; i++) {
-            var orderData = getCart(true)[i];
-            amounts.push(orderData.amount);
+        var innerText = products[i][0];
+        var str = "";
+
+        for (var j = 0; j < innerText.length; j++) {
+            if (innerText[j] != " ") {
+                str += products[i][0][j];
+            } else {
+                str += "-";
+            }
         }
-    }
 
-    // Loop through and calculate the total price for the selected amount of each product
-    for (var i = 0; i < products.length; i++) {
-        //totalPrices.push(prices[i].split('$').pop() * amounts[i]);
+        cartButtonElements[i].classList.add(str);
     }
 
     // Add database references to products
     for (var i = 0; i < products.length; i++) {
         db[i] = {
-            productName: products[i],
+            productName: products[i][0],
             //amount: amounts[i]
         }
     }
@@ -136,21 +139,33 @@ function updateCartModal(updateOnlyPrices) {
 
         // Loop through each item in the cart
         for (var i = 0; i < Object.keys(cart).length; i++) {
+
             // Looped item from cart
             var item = cart[i];
             var orderData = getCart(true)[i];
+
+            // Used to map item in the cart to the index of that type of item in the list of products
+            var identifier = 0;
+
+            for (var j = 0; j < products.length; j++) {
+                if (item.productName == products[j][0]) {
+                    identifier = j;
+                }
+            }
 
             if (item.productName == "Custom Order") {
                 // Display the looped item with costs and details
                 productTable.innerHTML +=
                     "<tr id='item-" +
                     i +
-                    "'><td class='w-25'><img src='/img/logos/Logo@4x.png'" +
+                    "'><td class='w-25'><img src='" +
+                    products[identifier][2] +
+                    "'" +
                     "class='img-fluid img-thumbnail' id='product-img-" +
                     i +
                     "' alt=''></td><td id='product-name-" +
                     i +
-                    "'><span class='cart-product'>Custom Order</span><span class='price-break'></span><span class='cart-price'>$" +
+                    "'><span class='cart-product'>Custom Order</span><span class='price-break'></span><span class='cart-product-price'>$" +
                     item.price +
                     "</span></td><td id='product-quanity-" +
                     i +
@@ -158,32 +173,47 @@ function updateCartModal(updateOnlyPrices) {
                     "<input class='product-quantity' id='product-quantity-" + i + "-value' type='number' min='1' max='10' value='" + item.amount + "' onchange=updateProductCounts() onkeyup=enforceMinMax(this)></td><td class='product-total-price' id='product-total-price-" +
                     i +
                     "'>$" +
-                    (item.price * item.amount) +
+                    getTotalPriceAtCartIndex(i) +
                     "</td><td><a href='#' id='product-remove-" +
                     i +
                     "' class='btn btn-danger btn-rm' onclick='removeProduct(this.id);'><i class='fa fa-times'></i></a></td></tr>";
 
             } else {
+
+                // Get options if any
+                var options = "";
+
+                for (var j = 0; j < Object.keys(item.options).length; j++) {
+                    options += Object.keys(item.options)[j] + ": " + item.options[Object.keys(item.options)[j]];
+                    if (j != Object.keys(item.options).length - 1) {
+                        options += " / ";
+                    }
+                }
+
                 // Display the looped item with costs and details
                 productTable.innerHTML +=
                     "<tr id='item-" +
                     i +
-                    "'><td class='w-25'><img src='" + images[i] + "'" +
+                    "'><td class='w-25'><img src='" + products[identifier][2] + "'" +
                     "class='img-fluid img-thumbnail' id='product-img-" +
                     i +
                     "' alt=''></td><td id='product-name-" +
                     i +
                     "'><span class='cart-product'>" +
-                    products[i] +
-                    "</span><span class='price-break'></span><span class='cart-price'>" +
-                    prices[i] +
+                    products[identifier][0] +
+                    "</span><span class='price-break'></span><span class='cart-product-price'>" +
+                    products[identifier][1] +
+                    "</span><span class='price-break'></span><span class='product-options'>" +
+                    options +
                     "</span></td><td id='product-quanity-" +
                     i +
                     "'>" +
-                    "<input class='product-quantity' id='product-quantity-" + i + "-value' type='number' min='1' max='10' value='" + amounts[i] + "' onchange=updateProductCounts() onkeyup=enforceMinMax(this)></td><td class='product-total-price' id='product-total-price-" +
+                    "<input class='product-quantity' id='product-quantity-" + i + "-value' type='number' min='1' max='10' value='" +
+                    cart[i].amount +
+                    "' onchange=updateProductCounts() onkeyup=enforceMinMax(this)></td><td class='product-total-price' id='product-total-price-" +
                     i +
                     "'>$" +
-                    totalPrices[i] +
+                    getTotalPriceAtCartIndex(i) +
                     "</td><td><a href='#' id='product-remove-" +
                     i +
                     "' class='btn btn-danger btn-rm' onclick='removeProduct(this.id);'>	<i class='fa fa-times'></i></a></td></tr>";
@@ -205,15 +235,16 @@ function updateCartModal(updateOnlyPrices) {
         var orderData = getCart(true)[i];
 
         var itemPrice = 0;
-		var itemTaxes = 0;
+        var itemTaxes = 0;
 
+        // Calculate prices / taxes accordingly
         if (item.productName == "Custom Order") {
             itemPrice = item.price * item.amount;
             itemTaxes = itemPrice * taxPercentage / 100;
 
         } else {
             // Fetch price, calculate tax
-            itemPrice = parseFloat(prices[i].split('$').pop() * amounts[i]);
+            itemPrice = parseFloat(getTotalPriceAtCartIndex(i))
 
             itemTaxes = itemPrice * taxPercentage / 100;
         }
@@ -221,20 +252,6 @@ function updateCartModal(updateOnlyPrices) {
         // Update total costs during this iteration
         orderSubtotal += itemPrice;
         orderTaxes += itemTaxes;
-
-    }
-    // Update total price for each product
-    var totalProductPriceElements = document.getElementsByClassName('product-total-price');
-
-    for (var i = 0; i < totalProductPriceElements.length; i++) {
-
-        if (item.productName == "Custom Order") {
-            break;
-        }
-
-        var totalProductPrice = totalPrices[i];
-
-        totalProductPriceElements[i].innerText = "$" + totalProductPrice.toFixed(2);
 
     }
 
@@ -257,7 +274,7 @@ function updateCartModal(updateOnlyPrices) {
 }
 
 // Add item to cart
-function addToCart(button) {
+async function addToCart(button) {
 
     var classes = button.classList;
     var productKey = "";
@@ -265,39 +282,70 @@ function addToCart(button) {
     var productName = "";
     var data = {};
 
+    // Determine type of item added
     for (var i = 0; i < classes.length; i++) {
         if (classes[i] != "add-to-cart-button" && classes[i] != "sqs-block-button-element") {
             productKey = classes[i];
         }
     }
 
-    var productIndex = 0;
+    var optionElements = document.getElementById('options-container-' + productKey).querySelectorAll('.option');
 
-    if (productKey == "CustomOrder") {
-        productName = "Custom Order";
+    // Options, if any, of the item added
+    var options = {};
+    for (var i = 0; i < optionElements.length; i++) {
 
-        var customOrderPrice = parseFloat(document.getElementById("option-customorder-price").value);
+        var oeChildren = optionElements[i].children;
 
-        data = {
-            productName: productName,
-            amount: 1,
-            price: customOrderPrice
+        var optionName = "";
+        var optionIndex = 0;
+        var optionType = "";
+
+        // Gather info for selected item options
+        for (var j = 0; j < oeChildren.length; j++) {
+            if (oeChildren[j].localName == "h4") {
+                optionName = oeChildren[j].innerText;
+            } else {
+                optionIndex = j;
+                optionType = oeChildren[j].localName;
+            }
         }
 
+        // Option data
+        var val = "";
 
-    } else {
+        if (optionType == "select" || (optionType == "input" && oeChildren[optionIndex].type == "text")) {
+            val = oeChildren[optionIndex].value;
+        }
+
+        options[optionName] = val;
+    }
+
+    // Special case for custom order
+    if (productKey == "Custom-Order") {
+        productName = "Custom Order";
+    } else { // Get product name of item added
+        var productIndex = 0;
+
         for (var i = 0; i < products.length; i++) {
-            if (productKey == products[i]) {
+            if (productKey == products[i][0]) {
                 productIndex = i;
             }
         }
 
-        productName = products[productIndex];
+        productName = products[productIndex][0];
+    }
 
-        data = {
-            productName: productName,
-            amount: 1
-        };
+    // Template data for cart addition
+    data = {
+        productName: productName,
+        amount: 1,
+        options: options
+    };
+
+    // Handle custom order
+    if (productName == "Custom Order") {
+        data.price = parseFloat(document.getElementById("option-customorder-price").value);
     }
 
     // Check for localStorage support
@@ -306,14 +354,40 @@ function addToCart(button) {
             var cart = JSON.parse(localStorage.getItem("cartData"));
             var cartCount = Object.keys(cart).length;
 
+            // Used to determine if matches exist between the item being added and others in the cart
             var matchFound = false;
 
-            if (productKey != "CustomOrder") {
-                for (var i = 0; i < cartCount; i++) {
-                    if (cart[i].productName == data.productName) {
-                        matchFound = true;
-                        cart[i].amount++;
-                        break;
+            // Loop through all items in the cart
+            for (var i = 0; i < cartCount; i++) {
+                if (cart[i].productName == data.productName) {
+                    // Handle custom order
+                    if (productKey == "Custom-Order") {
+                        // If equal, item matches ones in cart
+                        if (cart[i].price == data.price) {
+                            matchFound = true;
+                            cart[i].amount++;
+                            break;
+                        }
+                    } else {
+                        // Loop through each option for the item
+                        for (var j = 0; j < Object.keys(data['options']).length; j++) {
+
+
+                            var keyName = Object.keys(data['options'])[j];
+                            var keyData = data['options'][keyName];
+
+                            // Check if option data is matching, reveals if item is identical to an entry in the cart
+                            if (keyData != cart[i].options[keyName]) {
+                                break;
+                            }
+
+                            if (j == Object.keys(data['options']).length - 1) {
+                                matchFound = true;
+                                cart[i].amount++;
+                                break;
+                            }
+
+                        }
                     }
                 }
             }
@@ -396,31 +470,17 @@ function updateProductCounts() {
 
     var quantityElements = document.getElementsByClassName('product-quantity');
 
-    amounts = [];
-    totalPrices = [];
 
-    for (var i = 0; i < quantityElements.length; i++) {
-
+    // Loop through quantities of each item in the cart
+    for (var i = 0; i < Object.keys(cart).length; i++) {
         var amount = quantityElements[i];
-
         var item = cart[i];
 
-        // Check if the amount entered is not a number
         if (!parseInt(amount.value)) {
-            // Default amount to 1
-            amounts.push(1);
-        } else { // Amount entered is a number
-            amounts.push(parseInt(amount.value));
+            cart[i].amount = 1;
+        } else {
+            cart[i].amount = parseInt(amount.value);
         }
-
-        if (item.productName != "Custom Order") {
-            totalPrices.push(prices[i].split('$').pop() * amounts[i]);
-        }
-
-    }
-
-    for (var i = 0; i < Object.keys(cart).length; i++) {
-        cart[i].amount = amounts[i];
     }
 
     newCart = cart;
@@ -577,10 +637,27 @@ function submitOrder(details) {
     });
 
     clearCart();
-
-
 }
 
+// Returns the total price for a given index in the cart
+function getTotalPriceAtCartIndex(cartIndex) {
+    var cart = getCart(true);
+
+    var value = 0;
+
+    // Determine total price
+    if (cart[cartIndex].productName == "Custom Order") {
+        value = cart[cartIndex].price * cart[cartIndex].amount;
+    } else {
+        for (var j = 0; j < products.length; j++) {
+            if (cart[cartIndex].productName == products[j][0]) {
+                value = products[j][1].split('$').pop() * cart[cartIndex].amount;
+            }
+        }
+    }
+
+    return value.toFixed(2);
+}
 
 // Logs the error upon a failed attempted to fetch data
 function errData(err) {

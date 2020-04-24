@@ -243,6 +243,13 @@ header.masthead .heading-text .heading-main {
 	}
 }
 
+@media (max-width: 768px) {
+	.page-section h2.section-heading {
+		font-size: 44px;
+		font-weight: 400;
+	}
+}
+
 /* ===== End Page Section ===== */
 
 
@@ -252,6 +259,11 @@ header.masthead .heading-text .heading-main {
 #products-heading {
 	text-align: center;
 	margin-bottom: 15px;
+}
+
+#product-listings {
+	margin-left: 25px;
+	margin-right: 25px;
 }
 
 .product {
@@ -424,6 +436,10 @@ header.masthead .heading-text .heading-main {
 	width: 25px;
 }
 
+p.product-description {
+	font-size: 16pt;
+}
+
 .product-modal .close-modal:hover {
 	opacity: 0.3;
 }
@@ -468,6 +484,11 @@ header.masthead .heading-text .heading-main {
 	bottom: 0px;
 }
 
+.option-set {
+	min-height: 25px;
+	font-size: 10pt;
+}
+
 @media screen and (min-width: 1200px) {
 	.product-modal .modal-content .modal-body {
 		font-size: 16pt;
@@ -483,6 +504,10 @@ header.masthead .heading-text .heading-main {
 
 	.order-options {
 		font-size: 14pt;
+	}
+
+	.option-set {
+		font-size: 13pt;
 	}
 }
 
@@ -519,9 +544,9 @@ header.masthead .heading-text .heading-main {
 	.add-to-cart-button {
 		font-size: 14pt;
 	}
-
-	.description {
-		font-size: 10pt;
+	
+	p.product-description {
+		font-size: 3.4vw;
 	}
 }
 
