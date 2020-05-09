@@ -168,6 +168,7 @@ header.masthead .heading-text .heading-secondary {
 	line-height: 22px;
 	margin-bottom: 25px;
 	font-family: "Droid Serif", "Montserrat", "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	text-shadow:2px 2px 8px black,2px 2px 3px black;
 }
 
 header.masthead .heading-text .heading-main {
@@ -176,6 +177,7 @@ header.masthead .heading-text .heading-main {
 	line-height: 45px;
 	margin-bottom: 35px !important;
 	font-family: "Montserrat", "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	text-shadow: 2px 2px 8px black, 2px 2px 3px black;
 }
 
 @media (min-width: 768px) {
@@ -232,7 +234,7 @@ header.masthead .heading-text .heading-main {
 .page-section h3.section-subheading {
 	font-size: 16px;
 	font-weight: 400;
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 	text-transform: none;
 	font-family: "Droid Serif", "Montserrat", "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }

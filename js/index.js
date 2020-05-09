@@ -3,6 +3,30 @@ var db = {};
 var products = [];
 var images = [];
 
+document.addEventListener("DOMContentLoaded", function () {
+    var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+    if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    let lazyImage = entry.target;
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.srcset = lazyImage.dataset.srcset;
+                    lazyImage.classList.remove("lazy");
+                    lazyImageObserver.unobserve(lazyImage);
+                }
+            });
+        });
+
+        lazyImages.forEach(function (lazyImage) {
+            lazyImageObserver.observe(lazyImage);
+        });
+    } else {
+        // Possibly fall back to a more compatible method here
+    }
+});
+
 setupNavbar();
 findProductsAndDetails();
 updateCartModal(false);
@@ -21,6 +45,8 @@ function findProductsAndDetails() {
         for (var j = 0; j < productIT.length; j++) {
             if (productIT[j] != " ") {
                 str += productIT[j]
+            } else {
+                str += "-";
             }
         }
 
@@ -282,6 +308,7 @@ async function addToCart(button) {
     var productName = "";
     var data = {};
 
+    
     // Determine type of item added
     for (var i = 0; i < classes.length; i++) {
         if (classes[i] != "add-to-cart-button" && classes[i] != "sqs-block-button-element") {
@@ -289,18 +316,19 @@ async function addToCart(button) {
         }
     }
 
+    
     var optionElements = document.getElementById('options-container-' + productKey).querySelectorAll('.option');
-
+    
     // Options, if any, of the item added
     var options = {};
     for (var i = 0; i < optionElements.length; i++) {
-
+        
         var oeChildren = optionElements[i].children;
-
+        
         var optionName = "";
         var optionIndex = 0;
         var optionType = "";
-
+        
         // Gather info for selected item options
         for (var j = 0; j < oeChildren.length; j++) {
             if (oeChildren[j].localName == "h4") {
@@ -310,39 +338,49 @@ async function addToCart(button) {
                 optionType = oeChildren[j].localName;
             }
         }
-
+        
         // Option data
         var val = "";
-
+        
         if (optionType == "select" || (optionType == "input" && oeChildren[optionIndex].type == "text")) {
             val = oeChildren[optionIndex].value;
         }
-
+        
         options[optionName] = val;
     }
-
+    
     // Special case for custom order
     if (productKey == "Custom-Order") {
         productName = "Custom Order";
     } else { // Get product name of item added
         var productIndex = 0;
 
+        var str = "";
+
+        for (var i = 0; i < productKey.length; i++) {
+            if (productKey[i] == "-") {
+                str += " ";
+            } else {
+                str += productKey[i];
+            }
+        }
+        
         for (var i = 0; i < products.length; i++) {
-            if (productKey == products[i][0]) {
+            if (str == products[i][0]) {
                 productIndex = i;
             }
         }
-
+        
         productName = products[productIndex][0];
     }
-
+    
     // Template data for cart addition
     data = {
         productName: productName,
         amount: 1,
         options: options
     };
-
+    
     // Handle custom order
     if (productName == "Custom Order") {
         data.price = parseFloat(document.getElementById("option-customorder-price").value);
