@@ -61,7 +61,7 @@ function findProductsAndDetails() {
             price = modalElement.querySelectorAll(".product-price")[0].innerText;
         }
 
-        image = imageElements[i].attributes[1].value;
+        image = imageElements[i].attributes[2].value;
 
         products.push([productElementTitles[i].innerText, price, image]);
     }
@@ -93,7 +93,7 @@ function findProductsAndDetails() {
     }
 
     for (var i = 0; i < products.length; i++) {
-        images.push(imageElements[i].attributes[1].value);
+        images.push(imageElements[i].attributes[2].value);
     }
 
     // Push database to storage
