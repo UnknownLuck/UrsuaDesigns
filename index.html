@@ -28,7 +28,7 @@
     <!-- Stylesheets -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="css/index.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
 
     <!-- Google Tag Manager -->
     <script>
@@ -52,7 +52,7 @@
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="#top">
                 <!-- Your Logo Here -->
-                <img class="img-fluid" src="img/logos/Nav Logo_Alternate.png">
+                <img class="img-fluid" src="img/logos/Nav_Logo_Alternate.png">
             </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#responsiveNavbar" aria-controls="responsiveNavbar">Menu <i class="fas fa-bars"></i>
@@ -61,11 +61,11 @@
 
                 <!-- Navbar Links -->
                 <ul class="navbar-nav text-uppercase ml-auto">
-                    <li class="navbar-item">
+                    <li class="navbar-item hidden">
                         <a class="nav-link js-scroll-trigger" href="#services">Services</a>
                     </li>
-                    <li class="navbar-item hidden">
-                        <a class="nav-link js-scroll-trigger" href="#products-container">Products</a>
+                    <li class="navbar-item">
+                        <a class="nav-link js-scroll-trigger" href="#products-container">Shop</a>
                     </li>
                     <li class="navbar-item">
                         <a class="nav-link js-scroll-trigger" href="#about">About</a>
@@ -76,8 +76,8 @@
                     <li class="navbar-item">
                         <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
                     </li>
-                    <li class="navbar-item hidden">
-                        <a class="nav-link" data-toggle="modal" href="#cart">Cart</a>
+                    <li class="navbar-item">
+                        <a class="nav-link hidden" data-toggle="modal" href="#cart">Cart</a>
                     </li>
                 </ul>
 
@@ -87,17 +87,18 @@
 
     <!-- Header -->
     <header class="masthead">
-        <div class="container">
-            <div class="heading-text">
-                <div class="heading-main">Welcome To Ursua Designs!</div>
-                <div class="heading-secondary">Custom 3D Printing That Fits Your Needs</div>
-                <a class="btn btn-primary btn-xl js-scroll-trigger" href="#learn-more">Tell Me More</a>
+        <div class="top-banner">
+            <div class="text-center d-flex align-items-center">
+                <img src="img/banners/Banner@2x.png" class="img-fluid banner-img">
+            </div>
+            <div class="down-arrow-wrapper" data-module="down-arrow">
+                <a href="#products" data-ui="down-arrow" class="down-arrow ss-icon ss-navigatedown js-scroll-trigger" aria-label=""></a>
             </div>
         </div>
     </header>
 
     <!-- Section -->
-    <section class="page-section" id="services">
+    <section class="page-section hidden" id="services">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -133,217 +134,365 @@
     </section>
 
     <!-- Products -->
-    <div class="page-section hidden" id="products-container">
+    <div class="page-section" id="products-container">
         <div class="col-lg-12 text-center">
-            <h2 class="section-heading">Products</h2>
+            <h1 class="section-heading">Shop</h1>
         </div>
 
-        <div class="row" id='product-listings'>
-
-            <!-- Headset/Controller Stand Product Listing -->
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="product product-rounded">
-                    <!-- Set the href to the respective product modal id -->
-                    <a class="product-link" href="#VR-Headset-Stand-and-Controller-Wall-Mount" data-toggle="modal">
-                        <div class="product-img-container">
-                            <div class="product-img">
-                                <div class="product-hover">
-                                </div>
-                                <!-- Card Image -->
-                                <img class="lazy item-image" src="img/about/Gradient Banner.png"
-                                    data-src="https://drive.google.com/uc?export=view&id=1XHRqxU3Cr4d4iD2zQ9eiZfutBT7rbuRv"
-                                    data-srcset="https://drive.google.com/uc?export=view&id=1XHRqxU3Cr4d4iD2zQ9eiZfutBT7rbuRv">
-                                <!--<img class="item-image" src="img/logos/Logo.png">-->
-                            </div>
-                        </div>
-                        <div class="product-caption">
-                            <!-- Card Title -->
-                            <h4 class="product-caption-title">VR Headset Stand and Controller Wall Mount</h4>
-                            <!-- Card Subheading -->
-                            <p class="product-caption-description">Display Your Prized VR Headset</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Collapsing Daggers Product Listing -->
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="product product-rounded">
-                    <!-- Set the href to the respective product modal id -->
-                    <a class="product-link" href="#Collapsing-Daggers" data-toggle="modal">
-                        <div class="product-img-container">
-                            <div class="product-img">
-                                <div class="product-hover">
-                                </div>
-                                <!-- Card Image -->
-                                <img class="lazy item-image" src="img/about/Gradient Banner.png"
-                                    data-src="https://drive.google.com/uc?export=view&id=13Zi2guSi3zrdEUK_BAkO2Ro00GqHQ6-7"
-                                    data-srcset="https://drive.google.com/uc?export=view&id=13Zi2guSi3zrdEUK_BAkO2Ro00GqHQ6-7">
-                                <!--<img class="item-image" src="img/logos/Logo.png">-->
-                            </div>
-                        </div>
-                        <div class="product-caption">
-                            <!-- Card Title -->
-                            <h4 class="product-caption-title">Collapsing Daggers</h4>
-                            <!-- Card Subheading -->
-                            <p class="product-caption-description">Engaging and Shareable</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Keychains Product Listing -->
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="product product-rounded">
-                    <!-- Set the href to the respective product modal id -->
-                    <a class="product-link" href="#Keychains" data-toggle="modal">
-                        <div class="product-img-container">
-                            <div class="product-img">
-                                <div class="product-hover">
-                                </div>
-                                <!-- Card Image -->
-                                <img class="lazy item-image" src="img/about/Gradient Banner.png"
-                                    data-src="https://drive.google.com/uc?export=view&id=1l7Gh7CynBrlpVJqNkXl2md7Xmvusgh4Z"
-                                    data-srcset="https://drive.google.com/uc?export=view&id=1l7Gh7CynBrlpVJqNkXl2md7Xmvusgh4Z">
-                                <!--<img class="item-image" src="img/logos/Logo.png">-->
-                            </div>
-                        </div>
-                        <div class="product-caption">
-                            <!-- Card Title -->
-                            <h4 class="product-caption-title">Keychains</h4>
-                            <!-- Card Subheading -->
-                            <p class="product-caption-description">Drive Your Personality</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Nameplates Product Listing -->
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="product product-rounded">
-                    <!-- Set the href to the respective product modal id -->
-                    <a class="product-link" href="#Nameplates" data-toggle="modal">
-                        <div class="product-img-container">
-                            <div class="product-img">
-                                <div class="product-hover">
-                                </div>
-                                <!-- Card Image -->
-                                <img class="lazy item-image" src="img/about/Gradient Banner.png"
-                                    data-src="https://drive.google.com/uc?export=view&id=14SDDxpy55_7KMSW2hGKC72UCTXwx8txV"
-                                    data-srcset="https://drive.google.com/uc?export=view&id=14SDDxpy55_7KMSW2hGKC72UCTXwx8txV">
-                                <!--<img class="item-image" src="img/logos/Logo.png">-->
-                            </div>
-                        </div>
-                        <div class="product-caption">
-                            <!-- Card Title -->
-                            <h4 class="product-caption-title">Nameplates</h4>
-                            <!-- Card Subheading -->
-                            <p class="product-caption-description">Present Yourself</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Switch Grips Product Listing -->
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="product product-rounded">
-                    <!-- Set the href to the respective product modal id -->
-                    <a class="product-link" href="#Custom-Nintendo-Switch-Grips" data-toggle="modal">
-                        <div class="product-img-container">
-                            <div class="product-img">
-                                <div class="product-hover">
-                                </div>
-                                <!-- Card Image -->
-                                <img class="lazy item-image" src="img/about/Gradient Banner.png"
-                                    data-src="https://drive.google.com/uc?export=view&id=1HYX8ByFGpdrCIJS3Y35ZBsOaQ8w-eHf8"
-                                    data-srcset="https://drive.google.com/uc?export=view&id=1HYX8ByFGpdrCIJS3Y35ZBsOaQ8w-eHf8">
-                                <!--<img class="item-image" src="img/logos/Logo.png">-->
-                            </div>
-                        </div>
-                        <div class="product-caption">
-                            <!-- Card Title -->
-                            <h4 class="product-caption-title">Custom Nintendo Switch Grips</h4>
-                            <!-- Card Subheading -->
-                            <p class="product-caption-description">Personal Gaming for Your Switch</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Game Over Sign Product Listing -->
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="product product-rounded">
-                    <!-- Set the href to the respective product modal id -->
-                    <a class="product-link" href="#Game-Over-Sign" data-toggle="modal">
-                        <div class="product-img-container">
-                            <div class="product-img">
-                                <div class="product-hover">
-                                </div>
-                                <!-- Card Image -->
-                                <img class="lazy item-image" src="img/about/Gradient Banner.png"
-                                    data-src="https://drive.google.com/uc?export=view&id=1v99O_CMvinviF5zvI3prxUhvNqbq6nEM"
-                                    data-srcset="https://drive.google.com/uc?export=view&id=1v99O_CMvinviF5zvI3prxUhvNqbq6nEM">
-                                <!--<img class="item-image" src="img/logos/Logo.png">-->
-                            </div>
-                        </div>
-                        <div class="product-caption">
-                            <!-- Card Title -->
-                            <h4 class="product-caption-title">Game Over Wall Sign</h4>
-                            <!-- Card Subheading -->
-                            <p class="product-caption-description">Classic and Retro</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Custom Order Product Listing -->
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="product product-rounded">
-                    <!-- Set the href to the respective product modal id -->
-                    <a class="product-link" href="#CustomOrder" data-toggle="modal">
-                        <div class="product-img-container">
-                            <div class="product-img">
-                                <div class="product-hover">
-                                </div>
-                                <!-- Card Image -->
-                                <img class="lazy item-image" src="img/about/Gradient Banner.png"
-                                    data-src="https://drive.google.com/uc?export=view&id=14dm-0jhi-GcTX1M2QsD65RohRFyMbcmZ"
-                                    data-srcset="https://drive.google.com/uc?export=view&id=14dm-0jhi-GcTX1M2QsD65RohRFyMbcmZ">
-                            </div>
-                        </div>
-                        <div class="product-caption">
-                            <!-- Card Title -->
-                            <h4 class="product-caption-title">Custom Order</h4>
-                            <!-- Card Subheading -->
-                            <p class="product-caption-description">For Custom Orders, Please Email Us First!</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-        </div>
+        <div id='collection-component-1602035383592'></div>
+        <script type="text/javascript">
+            /*<![CDATA[*/
+            (function () {
+                var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+                if (window.ShopifyBuy) {
+                    if (window.ShopifyBuy.UI) {
+                        ShopifyBuyInit();
+                    } else {
+                        loadScript();
+                    }
+                } else {
+                    loadScript();
+                }
+                function loadScript() {
+                    var script = document.createElement('script');
+                    script.async = true;
+                    script.src = scriptURL;
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+                    script.onload = ShopifyBuyInit;
+                }
+                function ShopifyBuyInit() {
+                    var client = ShopifyBuy.buildClient({
+                        domain: 'ursuadesigns.myshopify.com',
+                        storefrontAccessToken: '752c32dca1ff03a87cedfb173b1522d4',
+                    });
+                    ShopifyBuy.UI.onReady(client).then(function (ui) {
+                        ui.createComponent('collection', {
+                            id: '165370593472',
+                            node: document.getElementById('collection-component-1602035383592'),
+                            moneyFormat: '%24%7B%7Bamount%7D%7D',
+                            options: { 
+                                "product": {
+                                    "styles": {
+                                        "product": {
+                                            "@media (min-width: 601px)": {
+                                                "max-width": "calc(33.33333% - 30px)",
+                                                "margin-left": "30px",
+                                                "margin-bottom": "50px",
+                                                "width": "calc(33.33333% - 30px)"
+                                            },
+                                            "img": {
+                                                "height": "calc(100% - 15px)",
+                                                "position": "absolute",
+                                                "left": "0",
+                                                "right": "0",
+                                                "top": "0",
+                                                "border": "solid #fff 3px"
+                                            },
+                                            "imgWrapper": {
+                                                "padding-top": "calc(75% + 15px)",
+                                                "position": "relative",
+                                                "height": "0"
+                                            }
+                                        },
+                                        "title": {
+                                            "font-family": "Open Sans, sans-serif",
+                                            "font-weight": "normal",
+                                            "color": "#ffffff"
+                                        },
+                                        "button": {
+                                            "font-family": "Montserrat, sans-serif",
+                                            ":hover": {
+                                                "background-color": "#cc2827"
+                                            },
+                                            "background-color": "#e32c2b",
+                                            ":focus": {
+                                                "background-color": "#cc2827"
+                                            },
+                                            "border-radius": "5px"
+                                        },
+                                        "price": {
+                                            "font-family": "Open Sans, sans-serif",
+                                            "color": "#ffffff"
+                                        },
+                                        "compareAt": {
+                                            "font-family": "Open Sans, sans-serif",
+                                            "color": "#ffffff"
+                                        },
+                                        "unitPrice": {
+                                            "font-family": "Open Sans, sans-serif",
+                                            "color": "#ffffff"
+                                        },
+                                        "description": {
+                                            "font-family": "Open Sans, sans-serif",
+                                            "color": "#ffffff"
+                                        }
+                                    },
+                                    "buttonDestination": "modal",
+                                    "contents": {
+                                        "options": false
+                                    },
+                                    "text": {
+                                        "button": "View Product"
+                                    },
+                                    "googleFonts": [
+                                        "Open Sans",
+                                        "Montserrat"
+                                    ]
+                                },
+                                "productSet": {
+                                    "styles": {
+                                        "products": {
+                                            "max-width": "80%",
+                                            "margin-left": "auto",
+                                            "margin-right": "auto",
+                                            "@media (min-width: 601px)": {
+                                                "margin-left": "-30px"
+                                            }
+                                        }
+                                    }
+                                },
+                                "modalProduct": {
+                                    "contents": {
+                                        "img": false,
+                                        "imgWithCarousel": true
+                                    },
+                                    "styles": {
+                                        "product": {
+                                            "@media (min-width: 601px)": {
+                                                "max-width": "100%",
+                                                "margin-left": "0px",
+                                                "margin-bottom": "0px"
+                                            }
+                                        },
+                                        "button": {
+                                            "font-family": "Montserrat, sans-serif",
+                                            ":hover": {
+                                                "background-color": "#cc2827"
+                                            },
+                                            "background-color": "#e32c2b",
+                                            ":focus": {
+                                                "background-color": "#cc2827"
+                                            },
+                                            "border-radius": "5px"
+                                        },
+                                        "title": {
+                                            "font-family": "Open Sans, sans-serif",
+                                            "font-weight": "normal",
+                                            "font-size": "27px",
+                                            "color": "#ffffff"
+                                        },
+                                        "price": {
+                                            "font-family": "Open Sans, sans-serif",
+                                            "color": "#ffffff"
+                                        },
+                                        "compareAt": {
+                                            "font-family": "Open Sans, sans-serif",
+                                            "color": "#ffffff"
+                                        },
+                                        "unitPrice": {
+                                            "font-family": "Open Sans, sans-serif",
+                                            "color": "#ffffff"
+                                        },
+                                        "description": {
+                                            "font-family": "Open Sans, sans-serif",
+                                            "font-size": "15px",
+                                            "color": "#ffffff"
+                                        },
+                                        "carouselItem": {
+                                            "border": "3px white solid"
+                                        }
+                                    },
+                                    "googleFonts": [
+                                        "Open Sans",
+                                        "Montserrat"
+                                    ],
+                                    "text": {
+                                        "button": "Add to cart"
+                                    }
+                                },
+                                "modal": {
+                                    "styles": {
+                                        "modal": {
+                                            "background-color": "#303030"
+                                        }
+                                    }
+                                },
+                                "option": {
+                                    "styles": {
+                                        "label": {
+                                            "font-family": "Open Sans, sans-serif",
+                                            "font-size": "15px",
+                                            "color": "#e2e2e2"
+                                        },
+                                        "select": {
+                                            "font-family": "Open Sans, sans-serif"
+                                        }
+                                    },
+                                    "googleFonts": [
+                                        "Open Sans"
+                                    ]
+                                },
+                                "cart": {
+                                    "styles": {
+                                        "button": {
+                                            "font-family": "Montserrat, sans-serif",
+                                            ":hover": {
+                                                "background-color": "#cc2827"
+                                            },
+                                            "background-color": "#e32c2b",
+                                            ":focus": {
+                                                "background-color": "#cc2827"
+                                            },
+                                            "border-radius": "5px"
+                                        },
+                                        "title": {
+                                            "color": "#f6f6f6"
+                                        },
+                                        "header": {
+                                            "color": "#f6f6f6"
+                                        },
+                                        "lineItems": {
+                                            "color": "#f6f6f6"
+                                        },
+                                        "subtotalText": {
+                                            "color": "#f6f6f6"
+                                        },
+                                        "subtotal": {
+                                            "color": "#f6f6f6"
+                                        },
+                                        "notice": {
+                                            "color": "#f6f6f6"
+                                        },
+                                        "currency": {
+                                            "color": "#f6f6f6"
+                                        },
+                                        "close": {
+                                            "color": "#f6f6f6",
+                                            ":hover": {
+                                                "color": "#f6f6f6"
+                                            }
+                                        },
+                                        "empty": {
+                                            "color": "#f6f6f6"
+                                        },
+                                        "noteDescription": {
+                                            "color": "#f6f6f6"
+                                        },
+                                        "discountText": {
+                                            "color": "#f6f6f6"
+                                        },
+                                        "discountIcon": {
+                                            "fill": "#f6f6f6"
+                                        },
+                                        "discountAmount": {
+                                            "color": "#f6f6f6"
+                                        },
+                                        "cart": {
+                                            "background-color": "#151515"
+                                        },
+                                        "footer": {
+                                            "background-color": "#151515"
+                                        }
+                                    },
+                                    "text": {
+                                        "total": "Subtotal",
+                                        "button": "Checkout"
+                                    },
+                                    "popup": false,
+                                    "googleFonts": [
+                                        "Montserrat"
+                                    ]
+                                },
+                                "toggle": {
+                                    "styles": {
+                                        "toggle": {
+                                            "font-family": "Montserrat, sans-serif",
+                                            "background-color": "#e32c2b",
+                                            ":hover": {
+                                                "background-color": "#cc2827"
+                                            },
+                                            ":focus": {
+                                                "background-color": "#cc2827"
+                                            }
+                                        }
+                                    },
+                                    "googleFonts": [
+                                        "Montserrat"
+                                    ]
+                                },
+                                "lineItem": {
+                                    "styles": {
+                                        "variantTitle": {
+                                            "color": "#f6f6f6"
+                                        },
+                                        "title": {
+                                            "color": "#f6f6f6"
+                                        },
+                                        "price": {
+                                            "color": "#f6f6f6"
+                                        },
+                                        "fullPrice": {
+                                            "color": "#f6f6f6"
+                                        },
+                                        "discount": {
+                                            "color": "#f6f6f6"
+                                        },
+                                        "discountIcon": {
+                                            "fill": "#f6f6f6"
+                                        },
+                                        "quantity": {
+                                            "color": "#f6f6f6"
+                                        },
+                                        "quantityIncrement": {
+                                            "color": "#f6f6f6",
+                                            "border-color": "#f6f6f6"
+                                        },
+                                        "quantityDecrement": {
+                                            "color": "#f6f6f6",
+                                            "border-color": "#f6f6f6"
+                                        },
+                                        "quantityInput": {
+                                            "color": "#f6f6f6",
+                                            "border-color": "#f6f6f6"
+                                        }
+                                    }
+                                }
+                            },
+                        });
+                    });
+                }
+            })();
+        /*]]>*/
+        </script>
     </div>
 
     <!-- Section -->
     <section class="page-section page-section-alt" id="about">
         <div class="container">
             <div class="row text-center d-flex align-items-center">
-                <div class="container col-xl-6 col-lg-6 col-md-10 col-sm-8 col-6 order-1">
-                    <img src="img/about/Gradient Banner.png" data-src="/img/about/T-Rex Skull Cura Center.png" data-srcset="/img/about/T-Rex Skull Cura Center.png"
-                    class="lazy img-fluid">
+                <div class="container col-xl-6 col-lg-6 col-md-10 col-sm-8 col-10 order-1">
+                    <img src="img/banners/Gradient_Banner.png" data-src="/img/about/T-Rex_Skull_Cura_Center.png"
+                        data-srcset="/img/about/T-Rex_Skull_Cura_Center.png" class="lazy img-fluid pad-below">
                 </div>
-                
+
                 <div class="container text-left col-xl-6 col-lg-6 col-md-10 col-sm-10 col-10 order-2">
                     <h2 class="section-heading text-center">Why Ursua Designs?</h2>
                     <br>
 
-                    <p class="">Ursua Designs employs the evolving technology of 3D printing to create unique items that hold a special value for anyone.
-                    </p>
-                    
-                    <p class="">We go out of our way to ensure we deliver the best possible result. 3D printing is an art that takes time and effort to produce a result worthy of being called final. For any given blemish or failure, we assess the situation and determine the best way to fix it. Should the need arise, Ursua Designs will reprint an object that doesn't meet our quality standards.
+                    <p class="">Ursua Designs employs the evolving technology of 3D printing to create unique items that
+                        hold a special value for anyone.
                     </p>
 
-                    <p class="">Everyone has their own unique personality. That's why it's important to express oneself as it is the most powerful way to show others who they are and why they do the things they do. As such, adding a personal bit of flair and personalization provides a special value that stands out.
+                    <p class="">We go out of our way to ensure we deliver the best possible result. 3D printing is an
+                        art that takes time and effort to produce a result worthy of being called final. For any given
+                        blemish or failure, we assess the situation and determine the best way to fix it. Should the
+                        need arise, Ursua Designs will reprint an object that doesn't meet our quality standards.
+                    </p>
+
+                    <p class="">Everyone has their own unique personality. That's why it's important to express oneself
+                        as it is the most powerful way to show others who they are and why they do the things they do.
+                        As such, adding a personal bit of flair and personalization provides a special value that stands
+                        out.
                     </p>
                 </div>
 
@@ -355,27 +504,27 @@
     <section class="page-section" id="learn-more">
         <div class="container">
             <div class="row text-center d-flex align-items-center">
-                <div class="container col-xl-6 col-lg-6 col-md-10 col-sm-8 col-6 order-2">
-                    <img src="img/about/Gradient Banner.png" data-src="/img/about/Ender 3 Printers.jpg" data-srcset="/img/about/Ender 3 Printers.jpg" class="lazy img-fluid">
+                <div class="container col-xl-6 col-lg-6 col-md-10 col-sm-8 col-10 order-2 pad-above">
+                    <img src="img/banners/Gradient_Banner.png" data-src="/img/about/Ender_3_Printers.jpg"
+                        data-srcset="/img/about/Ender_3_Printers.jpg" class="lazy img-fluid">
                 </div>
 
                 <div class="container col-xl-6 col-lg-6 col-md-10 col-sm-10 col-10 order-1" style="text-align: left;">
                     <br>
                     <h2 class="section-heading text-center ud-red">Ursua Designs Capabilities</h2>
 
-                    <p class="">Ursua Designs has three 3D printers, two of which are heavily modifed Creality Ender 3s, alongside a
-                        slightly modified TronXY X1. All three printers produce excellent prints and are used to accelerate
-                        printing and achieve different results. The largest print we support is the size of 15 inches x
-                        14 inches x 9 inches.</p>
+                    <p class="">Ursua Designs has three 3D printers, all of which are heavily modifed Creality Ender 3s.
+                        All three printers produce excellent prints and are used to accelerate printing times.
+                        The largest print volume we support is 15 inches x 14 inches x 8.5 inches.</p>
 
-                    <p class="">Our prices are determine by a number of factors, including the size of the print, the
-                        material used, the level of detail required, as well as how much material is used.</p>
+                    <p class="">Our prices are determined by a number of factors, including the size of the print, the
+                        type of material used, printing time, the level of detail required, as well as how much material is used.</p>
 
                     <h5 class="ud-red">Our Materials and Colors</h5>
                     <ul>
-                        <li>PLA (our standard plastic):&nbsp;Black, White, Red, Green, Blue, and Yellow.</li>
-                        <li>TPU (stretchy and flexible):&nbsp;Black, White, and Green.</li>
-                        <li>PETG (more durable and resistant):&nbsp;Gray and Orange.</li>
+                        <li>PLA (our standard plastic):&nbsp;Black, White, Red, Green, Blue, Yellow</li>
+                        <li>TPU (stretchy and flexible):&nbsp;Black, White, Green</li>
+                        <li>PETG (more durable and resistant):&nbsp;Black, White, Orange</li>
                     </ul>
                 </div>
 
@@ -444,6 +593,7 @@
     <div id="product-modals">
 
         <!-- VR Headset Stand and Controller Wall Mount Modal -->
+        <div id='product-component-1602032623826'></div>
         <div class="product-modal modal fade hidden" id="VR-Headset-Stand-and-Controller-Wall-Mount" aria-modal="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -463,7 +613,8 @@
                             <div class="col-sm-12 col-md-6">
                                 <!-- Product Image -->
                                 <img class="img-fluid d-block mx-auto item-display-image"
-                                    src="https://drive.google.com/uc?export=view&id=1XHRqxU3Cr4d4iD2zQ9eiZfutBT7rbuRv" alt="">
+                                    src="https://drive.google.com/uc?export=view&id=1XHRqxU3Cr4d4iD2zQ9eiZfutBT7rbuRv"
+                                    alt="">
                             </div>
                             <div class="col-sm-12 col-md-6 product-main">
                                 <!-- Product Title -->
@@ -502,33 +653,42 @@
                             </div>
                             <!-- Product Description, can use custom HTML elements for more details, images, and other product information -->
                             <div class="col-12">
-                                <p class="product-description">Do you need somewhere to place your VR headset while also making
+                                <p class="product-description">Do you need somewhere to place your VR headset while also
+                                    making
                                     it stand out? Regardless of your headset, show off your
-                                    amazing piece of technology to friends, family, and guests! Virtual Reality is such an
+                                    amazing piece of technology to friends, family, and guests! Virtual Reality is such
+                                    an
                                     amazing technology and deserves
                                     an elegant and easy way to display for all to see.<br><br>
-        
-                                    Protect your virtual reality headset on a custom colored wall mountable holder to save space
+
+                                    Protect your virtual reality headset on a custom colored wall mountable holder to
+                                    save space
                                     on a desk or table, while
-                                    maintaining easy accessibility for using your headset. This comes in two pieces, the headset
+                                    maintaining easy accessibility for using your headset. This comes in two pieces, the
+                                    headset
                                     wall mount and the
-                                    controller/touch controller wall mount. Simply place your headset and controllers on the
+                                    controller/touch controller wall mount. Simply place your headset and controllers on
+                                    the
                                     wall stand to store easily
-                                    store it. With the headset having the lenses and displays hidden underneath the headset,
+                                    store it. With the headset having the lenses and displays hidden underneath the
+                                    headset,
                                     light will not be able to
                                     easily enter and cause damage to the displays.<br><br>
-        
+
                                     This wall mount can be hung on two level screws or nails on the wall.
                                     Choose a from a variety of colors including Black, White, Red, Green, Blue, and
                                     Yellow.<br><br>
-        
-                                    All Virtual Reality Headset and Controller Wall Mounts are made to order per customer
+
+                                    All Virtual Reality Headset and Controller Wall Mounts are made to order per
+                                    customer
                                     request.
                                     This does not include the headset or controllers.<br><br>
-        
-                                    <i>Note: Due to the nature of 3D printing, visible lines, marks, and other imperfections may
+
+                                    <i>Note: Due to the nature of 3D printing, visible lines, marks, and other
+                                        imperfections may
                                         be present in orders. Any
-                                        damages or injuries from misuse/accidents are not responsible by Ursua Designs. Ursua
+                                        damages or injuries from misuse/accidents are not responsible by Ursua Designs.
+                                        Ursua
                                         Designs is not liable for any
                                         negative occurrence or event involved with its products.<br><br>
                                     </i></p>
@@ -559,7 +719,8 @@
                             <div class="col-sm-12 col-md-6">
                                 <!-- Product Image -->
                                 <img class="img-fluid d-block mx-auto item-display-image"
-                                    src="https://drive.google.com/uc?export=view&id=13vtrBbrxMdKfXvad2EwjFQiwCumTL5P7" alt="">
+                                    src="https://drive.google.com/uc?export=view&id=13vtrBbrxMdKfXvad2EwjFQiwCumTL5P7"
+                                    alt="">
                             </div>
                             <div class="col-sm-12 col-md-6 product-main">
                                 <!-- Product Title -->
@@ -587,7 +748,7 @@
                                                     <option value="Gray">Gray</option>
                                                 </select>
                                             </div>
-        
+
                                             <div class="col option">
                                                 <h4 class="option-set-heading" id="option-0-1-heading">Hilt Color</h4>
                                                 <select class="option-set" id="option-0-1">
@@ -615,27 +776,29 @@
                             <div class="col-12">
                                 <p class="product-description">Ursua Designs create fully customizable 3D printed items,
                                     like this toy collapsing dagger / knife!<br><br>
-        
+
                                     Simply swing around for the blade within to go shooting out and form the full
                                     dagger! Then to put it away, just push the
                                     blade from the very top towards to hilt to collapse the blade it into
                                     itself.<br><br>
-        
+
                                     All 3D printed components can have their color personalized to one of eight colors:
                                     Black, White, Gray, Red, Green,
                                     Blue, Yellow, and Orange. If you have any unique color requests, please be sure to
                                     <a href="mailto:ursuadesigns@gmail.com?subject=Custom%20Collapsing%20Dagger">email
                                         us</a>.<br><br>
-        
+
                                     The handle is made with jute string wrapped around the plastic of the hilt, giving
                                     an added layer of craftsmanship in
                                     addition to the added comfort in the hand.<br><br>
-        
+
                                     This item is made of plastic so please be careful not to break it!<br><br>
-        
-                                    <i>Note: Due to the nature of 3D printing, visible lines, marks, and other imperfections may be present in orders. Any
-                                    damages or injuries from misuse/accidents are not responsible by Ursua Designs. Ursua Designs is not liable for any
-                                    negative occurrence or event involved with its products.</i></p>
+
+                                    <i>Note: Due to the nature of 3D printing, visible lines, marks, and other
+                                        imperfections may be present in orders. Any
+                                        damages or injuries from misuse/accidents are not responsible by Ursua Designs.
+                                        Ursua Designs is not liable for any
+                                        negative occurrence or event involved with its products.</i></p>
                             </div>
                         </div>
                     </div>
@@ -920,7 +1083,8 @@
 
                                     <i>Note: Due to the nature of 3D printing, visible lines, marks, and other
                                         imperfections may
-                                        be present in orders. Ursua Designs is not associated with Nintendo in any way.</i></p>
+                                        be present in orders. Ursua Designs is not associated with Nintendo in any
+                                        way.</i></p>
                             </div>
                         </div>
                     </div>
@@ -1228,7 +1392,7 @@
     </script>
 
     <!-- UD JavaScript -->
-    <script src="js/index.min.js"></script>
+    <script src="js/index.js"></script>
 
 </body>
 
