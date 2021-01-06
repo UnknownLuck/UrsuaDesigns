@@ -363,7 +363,8 @@ header.masthead .top-banner {
 
 .product {
     margin: 8px;
-	/*background: #888;*/
+	background: #3a3a3a;
+	border-radius: 16px;
 }
 
 .product.product-rounded .product-img {
@@ -410,7 +411,8 @@ header.masthead .top-banner {
 .product-caption {
     width: 100%;
 	margin: 0 0 15px;
-	text-align: left;
+	padding: 0 5px 3px 5px;
+	text-align: center;
 }
 
 .product .product-caption * {
@@ -748,6 +750,29 @@ p.product-description {
 	background-color: #222;
 }
 
+#contact-sidebar {
+	text-align: left;
+}
+
+#contact_container {
+	color:#fff;
+	text-align: left;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
 /* ===== End Contact ===== */
 
 
@@ -875,11 +900,13 @@ img::-moz-selection {
 ::-moz-selection {
 	background: #e32c2b;
 	text-shadow: none;
+	color: white;
 }
 
 ::selection {
 	background: #e32c2b;
 	text-shadow: none;
+	color: white;
 }
 
 .close-symbol i {

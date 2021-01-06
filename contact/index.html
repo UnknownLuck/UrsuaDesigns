@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163595701-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-163595701-1');
+    </script>
+
+
+    <meta charset="utf-8">
+    <meta name="description" content="Ursua Designs offers 3D printing services alongside custom 3D printed products.">
+    <meta name="keywords" content="3D Printing,Products,Services,Custom,Personal,Personalized">
+    <meta name="author" content="Jacob Ursua">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Ursua Designs | 3D Printing</title>
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/logos/Logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/logos/Logo.png">
+
+    <!-- Stylesheets -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/index.css" rel="stylesheet">
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-MMTNQNX');
+    </script>
+    <!-- End Google Tag Manager -->
+
+</head>
+
+<body id="top">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMTNQNX" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="nav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#top">
+                <!-- Your Logo Here -->
+                <img class="img-fluid" src="/img/logos/Nav_Logo_Alternate.png">
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#responsiveNavbar" aria-controls="responsiveNavbar">Menu <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="responsiveNavbar">
+
+                <!-- Navbar Links -->
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="navbar-item hidden">
+                        <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="nav-link js-scroll-trigger" href="#products-container">Shop</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="nav-link js-scroll-trigger" href="#learn-more">Our Capabilities</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="nav-link hidden" data-toggle="modal" href="#cart">Cart</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+        <div class="top-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 " id="contact_container">
+                        <h2>Contact Us</h2>
+                        <p>Have some questions about what we do? Need something custom created? If you have anything to say, feel free to reach out
+                        to us and we will get back to you as soon as possible!
+</p>
+                        <form role="form" method="post" id="reused_form">
+                            <div class="row">
+                                <div class="col-sm-12 form-group">
+                                    <label for="message"> Message:</label>
+                                    <textarea class="form-control" type="textarea" id="message" name="message" maxlength="6000"
+                                        rows="7"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 form-group">
+                                    <label for="name"> Your Name:</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                                <div class="col-sm-6 form-group">
+                                    <label for="email"> Email:</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 form-group">
+                                    <button type="submit" class="btn btn-lg btn-default pull-right">Send &rarr;</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="success_message" style="width:100%; height:100%; display:none; ">
+                            <h3>Posted your message successfully!</h3>
+                        </div>
+                        <div id="error_message" style="width:100%; height:100%; display:none; ">
+                            <h3>Error</h3> Sorry there was an error sending your form.
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="contact-sidebar">
+                        <h4>Email</h4>
+                        <p>ursuadesigns@gmail.com</p>
+                        <h4>Social</h4>
+                        <a href="https://www.facebook.com/UrsuaDesigns">
+                            <i class="fab fa-facebook"></i>&nbsp;&nbsp;&nbsp;facebook
+                        </a><br>
+                        <a href="https://www.pinterest.com/ursuadesigns">
+                            <i class="fab fa-pinterest-p"></i>&nbsp;&nbsp;&nbsp;&nbsp;pinterest
+                        </a><br>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <span class="copyright text-light">Copyright &copy;
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script> Ursua Designs</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item">
+                            <a href="www.facebook.com/UrsuaDesigns">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item hidden">
+                            <a href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li class="list-inline-item">
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Modals -->
+    <div id="product-modals">
+
+        <!-- VR Headset Stand and Controller Wall Mount Modal -->
+        <div id='product-component-1602032623826'></div>
+        <div class="product-modal modal fade hidden" id="VR-Headset-Stand-and-Controller-Wall-Mount" aria-modal="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">
+                                <span class="fa-stack fa-1x close-symbol">
+                                    <i class="fas fa-times fa-stack-1x"></i>
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="container">
+                        <div class="row modal-body">
+                            <div class="col-12"> </div>
+                            <div class="col-sm-12 col-md-6">
+                                <!-- Product Image -->
+                                <img class="img-fluid d-block mx-auto item-display-image"
+                                    src="https://drive.google.com/uc?export=view&id=1XHRqxU3Cr4d4iD2zQ9eiZfutBT7rbuRv"
+                                    alt="">
+                            </div>
+                            <div class="col-sm-12 col-md-6 product-main">
+                                <!-- Product Title -->
+                                <h2 class="item-title">VR Headset Stand and Controller Wall Mount</h2>
+                                <!-- Product Subheading -->
+                                <p class="item-subheading">Display Your Prized VR Headset</p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12 price-container">
+                                            <!-- Product Price -->
+                                            <p class="product-price">$24.99</p>
+                                        </div>
+                                        <div class="col-12 options-container"
+                                            id="options-container-VR-Headset-Stand-and-Controller-Wall-Mount">
+                                            <div class="col option">
+                                                <h4 class="option-set-heading" id="option-5-0-heading">Color
+                                                </h4>
+                                                <select class="option-set" id="option-5-0">
+                                                    <option value="Black">Black</option>
+                                                    <option value="White">White</option>
+                                                    <option value="Red">Red</option>
+                                                    <option value="Green">Green</option>
+                                                    <option value="Blue">Blue</option>
+                                                    <option value="Yellow">Yellow</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 add-to-cart-container">
+                                            <div class="col option">
+                                                <button class="add-to-cart-button sqs-block-button-element">Add to
+                                                    Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Product Description, can use custom HTML elements for more details, images, and other product information -->
+                            <div class="col-12">
+                                <p class="product-description">Do you need somewhere to place your VR headset while also
+                                    making
+                                    it stand out? Regardless of your headset, show off your
+                                    amazing piece of technology to friends, family, and guests! Virtual Reality is such
+                                    an
+                                    amazing technology and deserves
+                                    an elegant and easy way to display for all to see.<br><br>
+
+                                    Protect your virtual reality headset on a custom colored wall mountable holder to
+                                    save space
+                                    on a desk or table, while
+                                    maintaining easy accessibility for using your headset. This comes in two pieces, the
+                                    headset
+                                    wall mount and the
+                                    controller/touch controller wall mount. Simply place your headset and controllers on
+                                    the
+                                    wall stand to store easily
+                                    store it. With the headset having the lenses and displays hidden underneath the
+                                    headset,
+                                    light will not be able to
+                                    easily enter and cause damage to the displays.<br><br>
+
+                                    This wall mount can be hung on two level screws or nails on the wall.
+                                    Choose a from a variety of colors including Black, White, Red, Green, Blue, and
+                                    Yellow.<br><br>
+
+                                    All Virtual Reality Headset and Controller Wall Mounts are made to order per
+                                    customer
+                                    request.
+                                    This does not include the headset or controllers.<br><br>
+
+                                    <i>Note: Due to the nature of 3D printing, visible lines, marks, and other
+                                        imperfections may
+                                        be present in orders. Any
+                                        damages or injuries from misuse/accidents are not responsible by Ursua Designs.
+                                        Ursua
+                                        Designs is not liable for any
+                                        negative occurrence or event involved with its products.<br><br>
+                                    </i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Collapsing Daggers Modal -->
+        <div class="product-modal modal fade hidden" id="Collapsing-Daggers" aria-modal="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">
+                                <span class="fa-stack fa-1x close-symbol">
+                                    <i class="fas fa-times fa-stack-1x"></i>
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="container">
+                        <div class="row modal-body">
+                            <div class="col-12"> </div>
+                            <div class="col-sm-12 col-md-6">
+                                <!-- Product Image -->
+                                <img class="img-fluid d-block mx-auto item-display-image"
+                                    src="https://drive.google.com/uc?export=view&id=13vtrBbrxMdKfXvad2EwjFQiwCumTL5P7"
+                                    alt="">
+                            </div>
+                            <div class="col-sm-12 col-md-6 product-main">
+                                <!-- Product Title -->
+                                <h2 class="item-title">Collapsing Daggers</h2>
+                                <!-- Product Subheading -->
+                                <p class="item-subheading">Engaging and Shareable</p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12 price-container">
+                                            <!-- Product Price -->
+                                            <p class="product-price">$11.99</p>
+                                        </div>
+                                        <div class="col-12 options-container" id="options-container-Collapsing-Daggers">
+                                            <div class="col option">
+                                                <h4 class="option-set-heading" id="option-0-0-heading">Blade Color
+                                                </h4>
+                                                <select class="option-set" id="option-0-0">
+                                                    <option value="Black">Black</option>
+                                                    <option value="White">White</option>
+                                                    <option value="Red">Red</option>
+                                                    <option value="Green">Green</option>
+                                                    <option value="Blue">Blue</option>
+                                                    <option value="Yellow">Yellow</option>
+                                                    <option value="Orange">Orange</option>
+                                                    <option value="Gray">Gray</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col option">
+                                                <h4 class="option-set-heading" id="option-0-1-heading">Hilt Color</h4>
+                                                <select class="option-set" id="option-0-1">
+                                                    <option value="Black">Black</option>
+                                                    <option value="White">White</option>
+                                                    <option value="Red">Red</option>
+                                                    <option value="Green">Green</option>
+                                                    <option value="Blue">Blue</option>
+                                                    <option value="Yellow">Yellow</option>
+                                                    <option value="Orange">Orange</option>
+                                                    <option value="Gray">Gray</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 add-to-cart-container">
+                                            <div class="col option">
+                                                <button class="add-to-cart-button sqs-block-button-element">Add to
+                                                    Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Product Description, can use custom HTML elements for more details, images, and other product information -->
+                            <div class="col-12">
+                                <p class="product-description">Ursua Designs create fully customizable 3D printed items,
+                                    like this toy collapsing dagger / knife!<br><br>
+
+                                    Simply swing around for the blade within to go shooting out and form the full
+                                    dagger! Then to put it away, just push the
+                                    blade from the very top towards to hilt to collapse the blade it into
+                                    itself.<br><br>
+
+                                    All 3D printed components can have their color personalized to one of eight colors:
+                                    Black, White, Gray, Red, Green,
+                                    Blue, Yellow, and Orange. If you have any unique color requests, please be sure to
+                                    <a href="mailto:ursuadesigns@gmail.com?subject=Custom%20Collapsing%20Dagger">email
+                                        us</a>.<br><br>
+
+                                    The handle is made with jute string wrapped around the plastic of the hilt, giving
+                                    an added layer of craftsmanship in
+                                    addition to the added comfort in the hand.<br><br>
+
+                                    This item is made of plastic so please be careful not to break it!<br><br>
+
+                                    <i>Note: Due to the nature of 3D printing, visible lines, marks, and other
+                                        imperfections may be present in orders. Any
+                                        damages or injuries from misuse/accidents are not responsible by Ursua Designs.
+                                        Ursua Designs is not liable for any
+                                        negative occurrence or event involved with its products.</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Keychains Modal -->
+        <div class="product-modal modal fade hidden" id="Keychains" aria-modal="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">
+                                <span class="fa-stack fa-1x close-symbol">
+                                    <i class="fas fa-times fa-stack-1x"></i>
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="container">
+                        <div class="row modal-body">
+                            <div class="col-12"> </div>
+                            <div class="col-sm-12 col-md-6">
+                                <!-- Product Image -->
+                                <img class="img-fluid d-block mx-auto item-display-image"
+                                    src="https://drive.google.com/uc?export=view&id=1l7Gh7CynBrlpVJqNkXl2md7Xmvusgh4Z"
+                                    alt="">
+                            </div>
+                            <div class="col-sm-12 col-md-6 product-main">
+                                <!-- Product Title -->
+                                <h2 class="item-title">Keychains</h2>
+                                <!-- Product Subheading -->
+                                <p class="item-subheading">Drive Your Personality</p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12 price-container">
+                                            <!-- Product Price -->
+                                            <p class="product-price">$3.99</p>
+                                        </div>
+                                        <div class="col-12 options-container" id="options-container-Keychains">
+                                            <div class="col option">
+                                                <h4 class="option-set-heading" id="option-1-0-heading">Background Color
+                                                </h4>
+                                                <select class="option-set" id="option-1-0">
+                                                    <option value="Black">Black</option>
+                                                    <option value="White">White</option>
+                                                    <option value="Red">Red</option>
+                                                    <option value="Green">Green</option>
+                                                    <option value="Blue">Blue</option>
+                                                    <option value="Yellow">Yellow</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col option">
+                                                <h4 class="option-set-heading" id="option-1-1-heading">Text Color</h4>
+                                                <select class="option-set" id="option-1-1">
+                                                    <option value="Black">Black</option>
+                                                    <option value="White">White</option>
+                                                    <option value="Red">Red</option>
+                                                    <option value="Green">Green</option>
+                                                    <option value="Blue">Blue</option>
+                                                    <option value="Yellow">Yellow</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col option">
+                                                <h4 class="option-set-heading" id="option-1-2-heading">Message</h4>
+                                                <input type="text" maxlength="18" placeholder="Your Message"
+                                                    class="option-set" id="option-1-2">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 add-to-cart-container">
+                                            <div class="col option">
+                                                <button class="add-to-cart-button sqs-block-button-element">Add to
+                                                    Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Product Description, can use custom HTML elements for more details, images, and other product information -->
+                            <div class="col-12">
+                                <p class="product-description">Ursua Designs creates fully customized and customizable
+                                    keychains that are made to order! All keychains are made with 3D
+                                    Printing with the use of a PLA material. The color of the background and text can
+                                    both be customized, as well as the ability
+                                    to choose between a more <b>pronounced bold</b> and more <i>sophisticated
+                                        elegant</i> font styles.<br><br>
+                                    The background and text are available in multiple colors, including Black, White,
+                                    Red, Green, Blue, and Yellow.
+
+                                    The keychain message/text allows up to 18 characters.<br>
+
+                                    All keychains are made to order per customer request.<br><br>
+
+                                    <i>Note: Due to the nature of 3D printing, visible lines, marks, and other
+                                        imperfections may be present in orders.</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nameplates Modal -->
+        <div class="product-modal modal fade hidden" id="Nameplates" aria-modal="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">
+                                <span class="fa-stack fa-1x close-symbol">
+                                    <i class="fas fa-times fa-stack-1x"></i>
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="container">
+                        <div class="row modal-body">
+                            <div class="col-12"> </div>
+                            <div class="col-sm-12 col-md-6">
+                                <!-- Product Image -->
+                                <img class="img-fluid d-block mx-auto item-display-image"
+                                    src="https://drive.google.com/uc?export=view&id=14SDDxpy55_7KMSW2hGKC72UCTXwx8txV"
+                                    alt="">
+
+                            </div>
+                            <div class="col-sm-12 col-md-6 product-main">
+                                <!-- Product Title -->
+                                <h2 class="item-title">Nameplates</h2>
+                                <!-- Product Subheading -->
+                                <p class="item-subheading">Present Yourself</p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12 price-container">
+                                            <!-- Product Price -->
+                                            <p class="product-price">$8.99</p>
+                                        </div>
+                                        <div class="col-12 options-container" id="options-container-Nameplates">
+                                            <div class="col option">
+                                                <h4 class="option-set-heading" id="option-2-0-heading">Background Color
+                                                </h4>
+                                                <select class="option-set" id="option-2-0">
+                                                    <option value="Black">Black</option>
+                                                    <option value="White">White</option>
+                                                    <option value="Red">Red</option>
+                                                    <option value="Green">Green</option>
+                                                    <option value="Blue">Blue</option>
+                                                    <option value="Yellow">Yellow</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col option">
+                                                <h4 class="option-set-heading" id="option-2-1-heading">Text Color</h4>
+                                                <select class="option-set" id="option-2-1">
+                                                    <option value="Black">Black</option>
+                                                    <option value="White">White</option>
+                                                    <option value="Red">Red</option>
+                                                    <option value="Green">Green</option>
+                                                    <option value="Blue">Blue</option>
+                                                    <option value="Yellow">Yellow</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col option">
+                                                <h4 class="option-set-heading" id="option-2-2-heading">Message</h4>
+                                                <input type="text" maxlength="18" placeholder="Your Message"
+                                                    class="option-set" id="option-2-2">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 add-to-cart-container">
+                                            <div class="col option">
+                                                <button class="add-to-cart-button sqs-block-button-element">Add to
+                                                    Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Product Description, can use custom HTML elements for more details, images, and other product information -->
+                            <div class="col-12">
+                                <p class="product-description">Ursua Designs creates fully customized and customizable
+                                    nameplates that are made to order! All nameplates are made with 3D
+                                    Printing with the use of a PLA material. The color of the background and text can
+                                    both be customized.<br><br>
+                                    The background and text are available in multiple colors, including Black, White,
+                                    Red, Green, Blue, and Yellow.
+
+                                    The nameplate message/text allows up to 18 characters.<br>
+
+                                    All nameplate are made to order per customer request.<br><br>
+
+                                    <i>Note: Due to the nature of 3D printing, visible lines, marks, and other
+                                        imperfections may be present in orders.</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Switch Grips Modal -->
+        <div class="product-modal modal fade hidden" id="Custom-Nintendo-Switch-Grips" aria-modal="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">
+                                <span class="fa-stack fa-1x close-symbol">
+                                    <i class="fas fa-times fa-stack-1x"></i>
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="container">
+                        <div class="row modal-body">
+                            <div class="col-12"> </div>
+                            <div class="col-sm-12 col-md-6">
+                                <!-- Product Image -->
+                                <img class="img-fluid d-block mx-auto item-display-image"
+                                    src="https://drive.google.com/uc?export=view&id=1HYX8ByFGpdrCIJS3Y35ZBsOaQ8w-eHf8"
+                                    alt="">
+                            </div>
+                            <div class="col-sm-12 col-md-6 product-main">
+                                <!-- Product Title -->
+                                <h2 class="item-title">Custom Nintendo Switch Grips</h2>
+                                <!-- Product Subheading -->
+                                <p class="item-subheading">Personal Gaming for Your Switch</p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12 price-container">
+                                            <!-- Product Price -->
+                                            <p class="product-price">$9.95</p>
+                                        </div>
+                                        <div class="col-12 options-container"
+                                            id="options-container-Custom-Nintendo-Switch-Grips">
+                                            <div class="col option">
+                                                <h4 class="option-set-heading" id="option-3-0-heading">Color
+                                                </h4>
+                                                <select class="option-set" id="option-3-0">
+                                                    <option value="Black">Black</option>
+                                                    <option value="White">White</option>
+                                                    <option value="Red">Red</option>
+                                                    <option value="Green">Green</option>
+                                                    <option value="Blue">Blue</option>
+                                                    <option value="Yellow">Yellow</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col option">
+                                                <h4 class="option-set-heading" id="option-3-1-heading">Username</h4>
+                                                <input type="text" maxlength="18" placeholder="Your Username"
+                                                    class="option-set" id="option-3-1">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 add-to-cart-container">
+                                            <div class="col option">
+                                                <button class="add-to-cart-button sqs-block-button-element">Add to
+                                                    Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Product Description, can use custom HTML elements for more details, images, and other product information -->
+                            <div class="col-12">
+                                <p class="product-description">Ursua Designs creates fully customized and customizable
+                                    Nintendo Switch Joy Con Grips
+                                    that are made to order! All keychains are made with 3D
+                                    Printing with the use of a PLA material. The color of the Grip can be
+                                    customized.<br><br>
+                                    The Custom Grip is available in multiple colors, including Black, White, Red,
+                                    Green, Blue, and Yellow.
+
+                                    The Grip username allows up to 18 characters.<br>
+
+                                    All Nintendo Switch Grips are made to order per customer request.<br><br>
+
+                                    <i>Note: Due to the nature of 3D printing, visible lines, marks, and other
+                                        imperfections may
+                                        be present in orders. Ursua Designs is not associated with Nintendo in any
+                                        way.</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Over Sign Modal -->
+        <div class="product-modal modal fade hidden" id="Game-Over-Sign" aria-modal="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">
+                                <span class="fa-stack fa-1x close-symbol">
+                                    <i class="fas fa-times fa-stack-1x"></i>
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="container">
+                        <div class="row modal-body">
+                            <div class="col-12"> </div>
+                            <div class="col-sm-12 col-md-6">
+                                <!-- Product Image -->
+                                <img class="img-fluid d-block mx-auto item-display-image"
+                                    src="https://drive.google.com/uc?export=view&id=1v99O_CMvinviF5zvI3prxUhvNqbq6nEM"
+                                    alt="">
+                            </div>
+                            <div class="col-sm-12 col-md-6 product-main">
+                                <!-- Product Title -->
+                                <h2 class="item-title">Game Over Sign</h2>
+                                <!-- Product Subheading -->
+                                <p class="item-subheading">Classic and Retro</p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12 price-container">
+                                            <!-- Product Price -->
+                                            <p class="product-price">$14.95</p>
+                                        </div>
+                                        <div class="col-12 options-container" id="options-container-Game-Over-Sign">
+                                            <div class="col option">
+                                                <h4 class="option-set-heading" id="option-4-0-heading">Background Color
+                                                </h4>
+                                                <select class="option-set" id="option-4-0">
+                                                    <option value="Black">Black</option>
+                                                    <option value="White">White</option>
+                                                    <option value="Red">Red</option>
+                                                    <option value="Green">Green</option>
+                                                    <option value="Blue">Blue</option>
+                                                    <option value="Yellow">Yellow</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col option">
+                                                <h4 class="option-set-heading" id="option-4-1-heading">Text Color</h4>
+                                                <select class="option-set" id="option-4-1">
+                                                    <option value="Black">Black</option>
+                                                    <option value="White">White</option>
+                                                    <option value="Red">Red</option>
+                                                    <option value="Green">Green</option>
+                                                    <option value="Blue">Blue</option>
+                                                    <option value="Yellow">Yellow</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 add-to-cart-container">
+                                            <div class="col option">
+                                                <button class="add-to-cart-button sqs-block-button-element">Add to
+                                                    Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Product Description, can use custom HTML elements for more details, images, and other product information -->
+                            <div class="col-12">
+                                <p class="product-description">Ursua Designs creates fully customized and customizable
+                                    retro Game Over Signs
+                                    that are made to order! All Game Over Signs are made with 3D
+                                    Printing with the use of a PLA material. The color of the background and Game Over
+                                    text can both be
+                                    customized.<br><br>
+
+                                    The background and text are available in multiple colors, including Black, White,
+                                    Red,
+                                    Green, Blue, and Yellow.<br>
+
+                                    All Game Over Signs are made to order per customer request.<br><br>
+
+                                    <i>Note: Due to the nature of 3D printing, visible lines, marks, and other
+                                        imperfections may
+                                        be present in orders.</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Order Modal -->
+        <div class="product-modal modal fade hidden" id="CustomOrder" aria-modal="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">
+                                <span class="fa-stack fa-1x close-symbol">
+                                    <i class="fas fa-times fa-stack-1x"></i>
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="container">
+                        <div class="row modal-body">
+                            <div class="col-12"> </div>
+                            <div class="col-sm-12 col-md-6">
+                                <!-- Product Image -->
+                                <img class="img-fluid d-block mx-auto item-display-image"
+                                    src="https://drive.google.com/uc?export=view&id=14dm-0jhi-GcTX1M2QsD65RohRFyMbcmZ"
+                                    alt="">
+                            </div>
+                            <div class="col-sm-12 col-md-6 product-main">
+                                <!-- Product Title -->
+                                <h2 class="item-title">Custom Order</h2>
+                                <!-- Product Subheading -->
+                                <p class="item-subheading">For Custom Orders, Please Email Us First!</p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12 price-container">
+                                            <!-- Product Price -->
+                                            <!--<p class="product-price">$3.99</p>-->
+                                        </div>
+                                        <div class="col-12 options-container" id="options-container-Custom-Order">
+                                            <div class="col option">
+                                                <h4 class="option-set-heading" id="option-customorder-heading">Order
+                                                    Price</h4>
+                                                <input type="number" min="1" max="500" value="10"
+                                                    onkeyup="enforceMinMax(this)" class="option-set"
+                                                    id="option-customorder-price">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 add-to-cart-container">
+                                            <div class="col option">
+                                                <button class="add-to-cart-button sqs-block-button-element">Add to
+                                                    Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Product Description, can use custom HTML elements for more details, images, and other product information -->
+                            <div class="col-12">
+                                <p class="product-description">Email us at <a
+                                        href="mailto:ursuadesigns@gmail.com?Subject=Custom%203D%20Printing%20Order">ursuadesigns@gmail.com</a>
+                                    to inquire about your order. <a href="#learn-more" data-dismiss="modal">Click
+                                        here</a> to
+                                    learn about what we can make and how we price orders.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="product-modal modal fade" id="cart" aria-modal="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="cart-section" id="cart-view">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Cart</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">
+                                <span class="fa-stack fa-1x close-symbol">
+                                    <i class="fas fa-times fa-stack-1x"></i>
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-image">
+                            <thead>
+                                <tr id="cart-header-row">
+                                    <th scope="col"></th>
+                                    <th scope="col">Product</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Total</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="product-table">
+                            </tbody>
+                        </table>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <h6>Select Your Shipping Option</h6>
+
+                                    <!-- Add Your Shipping Options Here -->
+                                    <select id="shipping-options" onchange="updateCartModal(true)">
+                                        <option value="5">USPS First Class Package (1-3 Days) - $5</option>
+                                        <option value="0">Local Pickup Only - $0</option>
+                                        <option value="0">Free Shipping (Use if Directed To) - $0</option>
+                                        <!--
+                                        <option value="20">Shipping Three ($20)</option>
+                                        <option value="50">Shipping Four ($50)</option>-->
+                                    </select>
+                                </div>
+
+                                <table class="col-md-6 col-sm-12">
+                                    <tr>
+                                        <td>
+                                            <h5 class="table-right">Subtotal:</h5>
+                                        </td>
+                                        <td class="table-min">
+                                            <h5><span class="price text-success" id="cart-subtotal">$0.00</span></h5>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h5 class="table-right">Shipping:</h5>
+                                        </td>
+                                        <td class="table-min">
+                                            <h5><span class="price text-success" id="cart-shipping">$0.00</span></h5>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h5 class="table-right">Taxes:</h5>
+                                        </td>
+                                        <td class="table-min">
+                                            <h5><span class="price text-success" id="cart-taxes">$0.00</span></h5>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h5 class="table-right">Total:</h5>
+                                        </td>
+                                        <td class="table-min">
+                                            <h5><span class="price text-success" id="cart-total">$0.00</span></h5>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer border-top-0 d-flex justify-content-between">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-1">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                                <div class="col"></div>
+                                <div class="col" id="paypal-button-container" style="margin-top: 6px"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- PayPal JavaScript-->
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=AbD3yI3XUEpToBEZfiKCTM3Vz8jFBo3lSz59tavDMki0eonKtd_F3hd4Opzn3t_2nKm5b7p1ZE0ALAuG&currency=USD"
+        data-sdk-integration-source="button-factory"></script>
+    <script>
+        paypal.Buttons({
+            style: {
+                color: 'gold',
+                shape: 'rect',
+                size: 'responsive',
+                height: 38,
+                label: 'paypal',
+                layout: 'vertical',
+            },
+            createOrder: function (data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: getCartPrice()
+                        }
+                    }]
+                });
+            },
+            onApprove: function (data, actions) {
+                return actions.order.capture().then(function (details) {
+                    submitOrder(details);
+                });
+            }
+        }).render('#paypal-button-container');
+    </script>
+
+    <!-- UD JavaScript -->
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>
