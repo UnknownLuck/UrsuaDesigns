@@ -208,7 +208,7 @@ header.masthead .heading-text .heading-main {
 
 @media (min-width: 935px) {
 	.banner-img {
-		content:url("/img/banners/Banner1@2x.png");
+		content:url("/img/banners/Banner1.jpg");
 	}
 }
 
@@ -217,6 +217,11 @@ header.masthead .top-banner {
 	padding-bottom: 100px;
 	padding-left: 3px;
 	padding-right: 3px;
+}
+
+header.masthead .top-banner img {
+	margin-left: auto;
+	margin-right: auto;
 }
 
 
@@ -357,8 +362,12 @@ header.masthead .top-banner {
 }
 
 #product-listings {
-	margin-left: 25px;
-	margin-right: 25px;
+	/*margin-left: 25px;
+	margin-right: 25px;*/
+	max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .product {
