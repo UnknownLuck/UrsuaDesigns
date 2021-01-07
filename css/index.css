@@ -90,7 +90,7 @@ h6 {
 
 @media (min-width: 992px) {
 	#nav {
-		padding-top: 25px;
+		/*padding-top: 25px;*/
 		padding-bottom: 25px;
 		transition: padding-top 0.3s, padding-bottom 0.3s;
 		border: none;
@@ -206,17 +206,18 @@ header.masthead .heading-text .heading-main {
 	}
 }
 
-@media (min-width: 935px) {
-	.banner-img {
-		content:url("/img/banners/Banner1.jpg");
-	}
+header.masthead .top-banner {
+	padding: 11vh 3px 40px 3px !important;
 }
 
-header.masthead .top-banner {
-	padding-top: 20vh !important;
-	padding-bottom: 100px;
-	padding-left: 3px;
-	padding-right: 3px;
+@media (max-width: 935px) {
+	.banner-img {
+		content:url("/img/banners/Banner.jpg");
+	}
+
+	header.masthead .top-banner {
+		padding: 8vh 3px 40px 3px !important;
+	}
 }
 
 header.masthead .top-banner img {
