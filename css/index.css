@@ -338,7 +338,7 @@ header.masthead .top-banner img {
 	}
 
 	.page-section h2.section-heading {
-		font-size: 44px;
+		font-size: min(max(20px, 8vw), 42px);
 		font-weight: 400;
 	}
 }
@@ -450,6 +450,7 @@ header.masthead .top-banner img {
 
 .product .product-caption-title {
     font-weight: 600;
+	font-size: min(max(16px, 6vw), 21px);
 }
 
 .product .product-caption-description {
